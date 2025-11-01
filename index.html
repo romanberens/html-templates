@@ -10,6 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: 'Source Sans Pro', sans-serif; }
@@ -52,15 +57,16 @@
     }
   </style>
 </head>
-<body class="antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
-  <header id="site-header" class="fixed top-0 left-0 right-0 border-b border-transparent z-50 transition-all duration-500">
-    <button
-      class="theme-toggle hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 bg-white/80 text-lg shadow-sm text-gray-700 dark:text-yellow-300 dark:bg-gray-800 dark:border-gray-700 absolute top-4 right-4"
-      type="button"
-      aria-label="Przełącz tryb jasny i ciemny"
-    >
-      🌞
-    </button>
+<body class="antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+  <button
+    id="theme-toggle"
+    class="fixed top-4 right-4 z-50 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow transition-colors"
+    type="button"
+    aria-label="Zmień motyw"
+  >
+    🌞
+  </button>
+  <header id="site-header" class="fixed top-0 left-0 right-0 border-b border-transparent z-40 transition-all duration-500">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="#hero" class="header-brand heading-font text-xl font-semibold tracking-wide transition-colors duration-300">Biuro Prawne</a>
       <nav class="header-nav hidden md:flex items-center gap-6 text-sm font-semibold uppercase tracking-wide">
@@ -92,13 +98,6 @@
         <a href="#offer" class="hover:text-gray-900 dark:hover:text-white transition">Oferta</a>
         <a href="#testimonials" class="hover:text-gray-900 dark:hover:text-white transition">Opinie</a>
         <a href="#contact" class="hover:text-gray-900 dark:hover:text-white transition">Kontakt</a>
-        <button
-          class="theme-toggle mt-4 inline-flex items-center justify-center w-12 h-12 self-start rounded-full border border-gray-300 dark:border-gray-700 text-lg text-gray-700 dark:text-yellow-300"
-          type="button"
-          aria-label="Przełącz tryb jasny i ciemny"
-        >
-          🌞
-        </button>
       </nav>
     </div>
   </header>
@@ -116,7 +115,7 @@
           W sprawach naszych Klientów pragniemy być przewodnikiem, prowadzimy komunikację w taki sposób, aby była ona dla każdego Klienta zrozumiała.
         </p>
         <div class="mt-10">
-          <a href="#about" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gray-900 shadow-lg shadow-gray-900/20 transition hover:bg-gray-100">
+          <a href="#about" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gray-900 shadow-lg shadow-gray-900/20 transition hover:bg-gray-100 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200">
             Zobacz więcej
           </a>
         </div>
@@ -126,14 +125,14 @@
     <section id="about" class="py-20 sm:py-24 bg-gray-50 dark:bg-gray-800" data-aos="fade-up">
       <div class="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-2 lg:items-center">
         <div data-aos="fade-right">
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">O nas</p>
-          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900">Biuro Prawne</h2>
-          <h3 class="heading-font text-xl font-semibold mt-2 text-gray-600">Katarzyna Żuk</h3>
-          <p class="mt-6 text-lg leading-relaxed text-gray-700">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">O nas</p>
+          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900 dark:text-gray-100">Biuro Prawne</h2>
+          <h3 class="heading-font text-xl font-semibold mt-2 text-gray-600 dark:text-gray-300">Katarzyna Żuk</h3>
+          <p class="mt-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Biuro Prawne reprezentowane przez Katarzynę Żuk świadczy usługi zarówno dla klientów biznesowych, jak i dla osób fizycznych. Porad prawnych udzielamy stacjonarnie w naszym Biurze Prawnym, bezpośrednio u Klienta, a także w postaci e-porad, dzięki czemu jesteśmy otwarci na różne formy współpracy, także zdalnej.
           </p>
           <div class="mt-10">
-            <a href="#offer" class="inline-flex items-center justify-center rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold uppercase tracking-widest text-white shadow-md shadow-gray-900/20 transition hover:bg-gray-800">
+            <a href="#offer" class="inline-flex items-center justify-center rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold uppercase tracking-widest text-white shadow-md shadow-gray-900/20 transition hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200">
               Zobacz więcej
             </a>
           </div>
@@ -145,41 +144,41 @@
       </div>
     </section>
 
-    <section id="values" class="py-20 sm:py-24" data-aos="fade-up">
+    <section id="values" class="py-20 sm:py-24 bg-white dark:bg-gray-900" data-aos="fade-up">
       <div class="max-w-6xl mx-auto px-6">
         <div class="max-w-3xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Nasze wartości</p>
-          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900">Podstawowe zasady</h2>
-          <p class="mt-6 text-lg text-gray-700">jakimi kierujemy się w swojej codziennej pracy to:</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">Nasze wartości</p>
+          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900 dark:text-gray-100">Podstawowe zasady</h2>
+          <p class="mt-6 text-lg text-gray-700 dark:text-gray-300">jakimi kierujemy się w swojej codziennej pracy to:</p>
         </div>
         <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="100">
-            <h3 class="heading-font text-xl font-semibold text-gray-900">Indywidualizm</h3>
-            <p class="mt-4 text-sm text-gray-600">Każdy przypadek analizujemy oddzielnie, aby dopasować rozwiązania do potrzeb klienta.</p>
+            <h3 class="heading-font text-xl font-semibold text-gray-900 dark:text-gray-100">Indywidualizm</h3>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">Każdy przypadek analizujemy oddzielnie, aby dopasować rozwiązania do potrzeb klienta.</p>
           </article>
           <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="200">
-            <h3 class="heading-font text-xl font-semibold text-gray-900">Współpraca</h3>
-            <p class="mt-4 text-sm text-gray-600">Budujemy relacje oparte na zaufaniu i stałym dialogu na każdym etapie obsługi.</p>
+            <h3 class="heading-font text-xl font-semibold text-gray-900 dark:text-gray-100">Współpraca</h3>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">Budujemy relacje oparte na zaufaniu i stałym dialogu na każdym etapie obsługi.</p>
           </article>
           <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="300">
-            <h3 class="heading-font text-xl font-semibold text-gray-900">Komunikacja</h3>
-            <p class="mt-4 text-sm text-gray-600">Zapewniamy jasne i przejrzyste informacje, aby decyzje prawne były w pełni świadome.</p>
+            <h3 class="heading-font text-xl font-semibold text-gray-900 dark:text-gray-100">Komunikacja</h3>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">Zapewniamy jasne i przejrzyste informacje, aby decyzje prawne były w pełni świadome.</p>
           </article>
           <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="400">
-            <h3 class="heading-font text-xl font-semibold text-gray-900">Profesjonalizm</h3>
-            <p class="mt-4 text-sm text-gray-600">Działamy z najwyższą starannością, korzystając z aktualnej wiedzy prawnej.</p>
+            <h3 class="heading-font text-xl font-semibold text-gray-900 dark:text-gray-100">Profesjonalizm</h3>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">Działamy z najwyższą starannością, korzystając z aktualnej wiedzy prawnej.</p>
           </article>
           <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="500">
-            <h3 class="heading-font text-xl font-semibold text-gray-900">Zaangażowanie</h3>
-            <p class="mt-4 text-sm text-gray-600">Pozostajemy dostępni i aktywni w poszukiwaniu optymalnych rozwiązań.</p>
+            <h3 class="heading-font text-xl font-semibold text-gray-900 dark:text-gray-100">Zaangażowanie</h3>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">Pozostajemy dostępni i aktywni w poszukiwaniu optymalnych rozwiązań.</p>
           </article>
           <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="600">
-            <h3 class="heading-font text-xl font-semibold text-gray-900">Bezpieczeństwo</h3>
-            <p class="mt-4 text-sm text-gray-600">Dbamy o poufność danych oraz o pełną zgodność działań z obowiązującymi przepisami.</p>
+            <h3 class="heading-font text-xl font-semibold text-gray-900 dark:text-gray-100">Bezpieczeństwo</h3>
+            <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">Dbamy o poufność danych oraz o pełną zgodność działań z obowiązującymi przepisami.</p>
           </article>
         </div>
         <div class="mt-12">
-          <a href="#offer" class="inline-flex items-center justify-center rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold uppercase tracking-widest text-white shadow-md shadow-gray-900/20 transition hover:bg-gray-800">
+          <a href="#offer" class="inline-flex items-center justify-center rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold uppercase tracking-widest text-white shadow-md shadow-gray-900/20 transition hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200">
             Zobacz więcej
           </a>
         </div>
@@ -188,11 +187,11 @@
 
     <section id="offer" class="py-20 sm:py-24 bg-gray-900 text-gray-100" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6 text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-400">Oferta</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-300">Oferta</p>
         <h2 class="heading-font text-3xl font-bold mt-4">Zapewniamy pomoc prawną w sprawach z zakresu różnych dziedzin prawa:</h2>
         <p class="mt-6 text-lg text-gray-300">prawa cywilnego, prawa pracy, prawa handlowego, gospodarczego i innych</p>
         <div class="mt-10">
-          <a href="#footer" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gray-900 shadow-lg shadow-gray-950/20 transition hover:bg-gray-100">
+          <a href="#footer" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gray-900 shadow-lg shadow-gray-950/20 transition hover:bg-gray-100 dark:hover:bg-gray-200">
             Zobacz więcej
           </a>
         </div>
@@ -201,7 +200,7 @@
     <section id="testimonials" class="py-20 sm:py-24 bg-gray-50 dark:bg-gray-800">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Opinie</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">Opinie</p>
           <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900 dark:text-gray-100">Rekomendacje naszych klientów</h2>
           <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
             Poznaj doświadczenia osób, które powierzyły nam swoje sprawy. Ich zadowolenie to najlepsza wizytówka naszej pracy.
@@ -229,10 +228,10 @@
       </div>
     </section>
 
-    <section id="contact" class="py-20 sm:py-24" data-aos="fade-up">
+    <section id="contact" class="py-20 sm:py-24 bg-white dark:bg-gray-900" data-aos="fade-up">
       <div class="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-2 lg:items-start">
         <div data-aos="fade-right">
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Kontakt</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">Kontakt</p>
           <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900 dark:text-gray-100">Porozmawiajmy o Twojej sprawie</h2>
           <p class="mt-6 text-lg text-gray-700 dark:text-gray-300">
             Chętnie przedstawimy możliwe scenariusze działania i zaproponujemy formę współpracy dopasowaną do Twoich potrzeb. Zostaw swoje dane kontaktowe, a odezwiemy się z propozycją terminu konsultacji.
@@ -257,7 +256,7 @@
               <label for="contact-message" class="block text-sm font-semibold text-gray-800 dark:text-gray-200">Wiadomość</label>
               <textarea id="contact-message" placeholder="Opisz swoje potrzeby" required class="mt-2 block w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-200"></textarea>
             </div>
-            <button type="submit" class="w-full px-6 py-3 bg-gray-900 text-white rounded-full font-semibold uppercase tracking-widest hover:bg-gray-800 transition">Wyślij</button>
+            <button type="submit" class="w-full px-6 py-3 bg-gray-900 text-white rounded-full font-semibold uppercase tracking-widest hover:bg-gray-800 transition dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200">Wyślij</button>
           </div>
           <p id="contact-feedback" class="mt-4 text-sm font-semibold text-green-600 hidden">Dziękujemy za wiadomość! Odezwiemy się wkrótce.</p>
         </form>
@@ -298,7 +297,6 @@
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const siteHeader = document.getElementById('site-header');
-    const themeToggles = document.querySelectorAll('.theme-toggle');
     const contactForm = document.getElementById('contact-form');
     const contactFeedback = document.getElementById('contact-feedback');
 
@@ -319,29 +317,6 @@
       siteHeader.classList.toggle('shadow-lg', shouldElevate);
       siteHeader.classList.toggle('header-scrolled', shouldElevate);
     });
-
-    if (themeToggles.length) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        document.documentElement.classList.add('dark');
-      }
-
-      const updateThemeIcon = () => {
-        themeToggles.forEach((toggle) => {
-          toggle.textContent = document.documentElement.classList.contains('dark') ? '🌙' : '🌞';
-        });
-      };
-
-      themeToggles.forEach((toggle) => toggle.classList.remove('hidden'));
-      updateThemeIcon();
-
-      themeToggles.forEach((toggle) => {
-        toggle.addEventListener('click', () => {
-          document.documentElement.classList.toggle('dark');
-          updateThemeIcon();
-        });
-      });
-    }
 
     if (contactForm && contactFeedback) {
       contactForm.addEventListener('submit', (event) => {
@@ -368,6 +343,38 @@
       loop: true,
       grabCursor: true,
     });
+  </script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    if (toggle) {
+      let storedTheme = null;
+
+      try {
+        storedTheme = localStorage.getItem('theme');
+      } catch (error) {
+        storedTheme = null;
+      }
+
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDark = storedTheme === 'dark' || (storedTheme === null && prefersDark);
+
+      root.classList.toggle('dark', shouldUseDark);
+      toggle.textContent = shouldUseDark ? '🌙' : '🌞';
+
+      toggle.addEventListener('click', () => {
+        root.classList.toggle('dark');
+        const isDark = root.classList.contains('dark');
+        toggle.textContent = isDark ? '🌙' : '🌞';
+
+        try {
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        } catch (error) {
+          // Ignorujemy, jeśli localStorage jest niedostępny
+        }
+      });
+    }
   </script>
 </body>
 </html>
