@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: 'Source Sans Pro', sans-serif; }
@@ -18,18 +20,56 @@
       background-position: center;
       background-attachment: fixed;
     }
+    .header-brand,
+    .header-link {
+      transition: color 0.3s ease;
+    }
+    .header-brand,
+    .header-link {
+      color: #ffffff;
+    }
+    .header-scrolled .header-brand {
+      color: #111827;
+    }
+    .header-scrolled .header-link {
+      color: #1f2937;
+    }
+    .header-scrolled .header-link:hover {
+      color: #0f172a;
+    }
+    .dark .header-brand,
+    .dark .header-link {
+      color: #f3f4f6;
+    }
+    .dark .header-link:hover {
+      color: #ffffff;
+    }
+    .dark .header-scrolled .header-brand {
+      color: #f9fafb;
+    }
+    .dark .header-scrolled .header-link {
+      color: #f3f4f6;
+    }
   </style>
 </head>
-<body class="antialiased text-gray-900 bg-white">
-  <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur border-b border-gray-200 z-50">
+<body class="antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+  <header id="site-header" class="fixed top-0 left-0 right-0 border-b border-transparent z-50 transition-all duration-500">
+    <button
+      class="theme-toggle hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 bg-white/80 text-lg shadow-sm text-gray-700 dark:text-yellow-300 dark:bg-gray-800 dark:border-gray-700 absolute top-4 right-4"
+      type="button"
+      aria-label="Przełącz tryb jasny i ciemny"
+    >
+      🌞
+    </button>
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-      <a href="#hero" class="heading-font text-xl font-semibold tracking-wide text-gray-900">Biuro Prawne</a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-700 uppercase tracking-wide">
-        <a href="#hero" class="hover:text-gray-900 transition">Start</a>
-        <a href="#about" class="hover:text-gray-900 transition">O nas</a>
-        <a href="#values" class="hover:text-gray-900 transition">Zasady</a>
-        <a href="#offer" class="hover:text-gray-900 transition">Oferta</a>
-        <a href="#footer" class="hover:text-gray-900 transition">Kontakt</a>
+      <a href="#hero" class="header-brand heading-font text-xl font-semibold tracking-wide transition-colors duration-300">Biuro Prawne</a>
+      <nav class="header-nav hidden md:flex items-center gap-6 text-sm font-semibold uppercase tracking-wide">
+        <a href="#hero" class="header-link transition">Start</a>
+        <a href="#about" class="header-link transition">O nas</a>
+        <a href="#values" class="header-link transition">Zasady</a>
+        <a href="#offer" class="header-link transition">Oferta</a>
+        <a href="#testimonials" class="header-link transition">Opinie</a>
+        <a href="#contact" class="header-link transition">Kontakt</a>
       </nav>
       <button
         type="button"
@@ -44,19 +84,27 @@
         </svg>
       </button>
     </div>
-    <div class="md:hidden hidden border-t border-gray-200 bg-white" id="mobile-menu">
-      <nav class="flex flex-col px-6 py-4 space-y-3 text-sm font-semibold text-gray-700 uppercase tracking-wide">
-        <a href="#hero" class="hover:text-gray-900 transition">Start</a>
-        <a href="#about" class="hover:text-gray-900 transition">O nas</a>
-        <a href="#values" class="hover:text-gray-900 transition">Zasady</a>
-        <a href="#offer" class="hover:text-gray-900 transition">Oferta</a>
-        <a href="#footer" class="hover:text-gray-900 transition">Kontakt</a>
+    <div class="md:hidden hidden border-t border-gray-200 bg-white dark:bg-gray-900" id="mobile-menu">
+      <nav class="flex flex-col px-6 py-4 space-y-3 text-sm font-semibold text-gray-700 dark:text-gray-200 uppercase tracking-wide">
+        <a href="#hero" class="hover:text-gray-900 dark:hover:text-white transition">Start</a>
+        <a href="#about" class="hover:text-gray-900 dark:hover:text-white transition">O nas</a>
+        <a href="#values" class="hover:text-gray-900 dark:hover:text-white transition">Zasady</a>
+        <a href="#offer" class="hover:text-gray-900 dark:hover:text-white transition">Oferta</a>
+        <a href="#testimonials" class="hover:text-gray-900 dark:hover:text-white transition">Opinie</a>
+        <a href="#contact" class="hover:text-gray-900 dark:hover:text-white transition">Kontakt</a>
+        <button
+          class="theme-toggle mt-4 inline-flex items-center justify-center w-12 h-12 self-start rounded-full border border-gray-300 dark:border-gray-700 text-lg text-gray-700 dark:text-yellow-300"
+          type="button"
+          aria-label="Przełącz tryb jasny i ciemny"
+        >
+          🌞
+        </button>
       </nav>
     </div>
   </header>
 
   <main class="pt-24 md:pt-28">
-    <section id="hero" class="parallax-hero relative">
+    <section id="hero" class="parallax-hero relative" data-aos="fade-in">
       <div class="absolute inset-0 bg-gray-900/60"></div>
       <div class="relative max-w-4xl mx-auto px-6 py-32 sm:py-40 text-white">
         <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-200">Katarzyna Żuk</p>
@@ -75,9 +123,9 @@
       </div>
     </section>
 
-    <section id="about" class="py-20 sm:py-24 bg-gray-50">
+    <section id="about" class="py-20 sm:py-24 bg-gray-50 dark:bg-gray-800" data-aos="fade-up">
       <div class="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
+        <div data-aos="fade-right">
           <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">O nas</p>
           <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900">Biuro Prawne</h2>
           <h3 class="heading-font text-xl font-semibold mt-2 text-gray-600">Katarzyna Żuk</h3>
@@ -90,14 +138,14 @@
             </a>
           </div>
         </div>
-        <div class="relative overflow-hidden rounded-3xl shadow-xl shadow-gray-900/10">
+        <div class="relative overflow-hidden rounded-3xl shadow-xl shadow-gray-900/10" data-aos="fade-left">
           <img src="/images/about.jpg" alt="Biuro Prawne Katarzyny Żuk" class="w-full h-full object-cover" />
           <div class="absolute inset-0 border-4 border-white/60 rounded-3xl pointer-events-none"></div>
         </div>
       </div>
     </section>
 
-    <section id="values" class="py-20 sm:py-24">
+    <section id="values" class="py-20 sm:py-24" data-aos="fade-up">
       <div class="max-w-6xl mx-auto px-6">
         <div class="max-w-3xl">
           <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Nasze wartości</p>
@@ -105,27 +153,27 @@
           <p class="mt-6 text-lg text-gray-700">jakimi kierujemy się w swojej codziennej pracy to:</p>
         </div>
         <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+          <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="100">
             <h3 class="heading-font text-xl font-semibold text-gray-900">Indywidualizm</h3>
             <p class="mt-4 text-sm text-gray-600">Każdy przypadek analizujemy oddzielnie, aby dopasować rozwiązania do potrzeb klienta.</p>
           </article>
-          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+          <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="200">
             <h3 class="heading-font text-xl font-semibold text-gray-900">Współpraca</h3>
             <p class="mt-4 text-sm text-gray-600">Budujemy relacje oparte na zaufaniu i stałym dialogu na każdym etapie obsługi.</p>
           </article>
-          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+          <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="300">
             <h3 class="heading-font text-xl font-semibold text-gray-900">Komunikacja</h3>
             <p class="mt-4 text-sm text-gray-600">Zapewniamy jasne i przejrzyste informacje, aby decyzje prawne były w pełni świadome.</p>
           </article>
-          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+          <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="400">
             <h3 class="heading-font text-xl font-semibold text-gray-900">Profesjonalizm</h3>
             <p class="mt-4 text-sm text-gray-600">Działamy z najwyższą starannością, korzystając z aktualnej wiedzy prawnej.</p>
           </article>
-          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+          <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="500">
             <h3 class="heading-font text-xl font-semibold text-gray-900">Zaangażowanie</h3>
             <p class="mt-4 text-sm text-gray-600">Pozostajemy dostępni i aktywni w poszukiwaniu optymalnych rozwiązań.</p>
           </article>
-          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+          <article class="rounded-2xl bg-gray-50 dark:bg-gray-800/80 p-8 shadow-sm shadow-gray-900/5 border border-gray-100 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="600">
             <h3 class="heading-font text-xl font-semibold text-gray-900">Bezpieczeństwo</h3>
             <p class="mt-4 text-sm text-gray-600">Dbamy o poufność danych oraz o pełną zgodność działań z obowiązującymi przepisami.</p>
           </article>
@@ -138,7 +186,7 @@
       </div>
     </section>
 
-    <section id="offer" class="py-20 sm:py-24 bg-gray-900 text-gray-100">
+    <section id="offer" class="py-20 sm:py-24 bg-gray-900 text-gray-100" data-aos="fade-up">
       <div class="max-w-5xl mx-auto px-6 text-center">
         <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-400">Oferta</p>
         <h2 class="heading-font text-3xl font-bold mt-4">Zapewniamy pomoc prawną w sprawach z zakresu różnych dziedzin prawa:</h2>
@@ -148,6 +196,71 @@
             Zobacz więcej
           </a>
         </div>
+      </div>
+    </section>
+    <section id="testimonials" class="py-20 sm:py-24 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Opinie</p>
+          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900 dark:text-gray-100">Rekomendacje naszych klientów</h2>
+          <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
+            Poznaj doświadczenia osób, które powierzyły nam swoje sprawy. Ich zadowolenie to najlepsza wizytówka naszej pracy.
+          </p>
+        </div>
+        <div class="mt-12" data-aos="fade-up">
+          <div class="swiper mySwiper max-w-3xl mx-auto">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide p-8 bg-white dark:bg-gray-900/80 shadow rounded-xl border border-gray-100 dark:border-gray-700">
+                <p class="italic text-lg text-gray-700 dark:text-gray-200">"Świetna współpraca i profesjonalne podejście."</p>
+                <h4 class="mt-4 font-bold text-gray-900 dark:text-gray-100">— Anna Kowalska</h4>
+              </div>
+              <div class="swiper-slide p-8 bg-white dark:bg-gray-900/80 shadow rounded-xl border border-gray-100 dark:border-gray-700">
+                <p class="italic text-lg text-gray-700 dark:text-gray-200">"Polecam każdemu, kto szuka solidnego partnera."</p>
+                <h4 class="mt-4 font-bold text-gray-900 dark:text-gray-100">— Jan Nowak</h4>
+              </div>
+              <div class="swiper-slide p-8 bg-white dark:bg-gray-900/80 shadow rounded-xl border border-gray-100 dark:border-gray-700">
+                <p class="italic text-lg text-gray-700 dark:text-gray-200">"Indywidualne podejście i pełna transparentność na każdym kroku."</p>
+                <h4 class="mt-4 font-bold text-gray-900 dark:text-gray-100">— Marta Zielińska</h4>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 sm:py-24" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-2 lg:items-start">
+        <div data-aos="fade-right">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Kontakt</p>
+          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900 dark:text-gray-100">Porozmawiajmy o Twojej sprawie</h2>
+          <p class="mt-6 text-lg text-gray-700 dark:text-gray-300">
+            Chętnie przedstawimy możliwe scenariusze działania i zaproponujemy formę współpracy dopasowaną do Twoich potrzeb. Zostaw swoje dane kontaktowe, a odezwiemy się z propozycją terminu konsultacji.
+          </p>
+          <ul class="mt-8 space-y-4 text-sm text-gray-600 dark:text-gray-300">
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Adres:</span> ul. Prawnicza 12, Warszawa</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">Telefon:</span> +48 123 456 789</li>
+            <li><span class="font-semibold text-gray-900 dark:text-gray-100">E-mail:</span> kontakt@biuroprawne.pl</li>
+          </ul>
+        </div>
+        <form id="contact-form" class="max-w-md w-full mx-auto lg:ml-auto bg-white dark:bg-gray-900/70 p-8 rounded-3xl shadow-xl shadow-gray-900/10 border border-gray-100 dark:border-gray-700" novalidate>
+          <div class="space-y-4">
+            <div>
+              <label for="contact-name" class="block text-sm font-semibold text-gray-800 dark:text-gray-200">Imię i nazwisko</label>
+              <input id="contact-name" type="text" placeholder="Twoje imię" required class="mt-2 block w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-200" />
+            </div>
+            <div>
+              <label for="contact-email" class="block text-sm font-semibold text-gray-800 dark:text-gray-200">Adres e-mail</label>
+              <input id="contact-email" type="email" placeholder="twoj@email.com" required class="mt-2 block w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-200" />
+            </div>
+            <div>
+              <label for="contact-message" class="block text-sm font-semibold text-gray-800 dark:text-gray-200">Wiadomość</label>
+              <textarea id="contact-message" placeholder="Opisz swoje potrzeby" required class="mt-2 block w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-200"></textarea>
+            </div>
+            <button type="submit" class="w-full px-6 py-3 bg-gray-900 text-white rounded-full font-semibold uppercase tracking-widest hover:bg-gray-800 transition">Wyślij</button>
+          </div>
+          <p id="contact-feedback" class="mt-4 text-sm font-semibold text-green-600 hidden">Dziękujemy za wiadomość! Odezwiemy się wkrótce.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -177,9 +290,17 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
   <script>
+    AOS.init({ duration: 800, once: true });
+
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const siteHeader = document.getElementById('site-header');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const contactForm = document.getElementById('contact-form');
+    const contactFeedback = document.getElementById('contact-feedback');
 
     if (menuToggle && mobileMenu) {
       menuToggle.addEventListener('click', () => {
@@ -187,6 +308,66 @@
         menuToggle.setAttribute('aria-expanded', String(!isOpen));
       });
     }
+
+    window.addEventListener('scroll', () => {
+      if (!siteHeader) return;
+      const shouldElevate = window.scrollY > 50;
+      siteHeader.classList.toggle('bg-white/90', shouldElevate);
+      siteHeader.classList.toggle('dark:bg-gray-900/90', shouldElevate);
+      siteHeader.classList.toggle('backdrop-blur-md', shouldElevate);
+      siteHeader.classList.toggle('border-gray-200', shouldElevate);
+      siteHeader.classList.toggle('shadow-lg', shouldElevate);
+      siteHeader.classList.toggle('header-scrolled', shouldElevate);
+    });
+
+    if (themeToggles.length) {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.documentElement.classList.add('dark');
+      }
+
+      const updateThemeIcon = () => {
+        themeToggles.forEach((toggle) => {
+          toggle.textContent = document.documentElement.classList.contains('dark') ? '🌙' : '🌞';
+        });
+      };
+
+      themeToggles.forEach((toggle) => toggle.classList.remove('hidden'));
+      updateThemeIcon();
+
+      themeToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          document.documentElement.classList.toggle('dark');
+          updateThemeIcon();
+        });
+      });
+    }
+
+    if (contactForm && contactFeedback) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!contactForm.checkValidity()) {
+          contactFeedback.textContent = 'Uzupełnij poprawnie wszystkie pola formularza.';
+          contactFeedback.classList.remove('text-green-600');
+          contactFeedback.classList.add('text-red-600');
+          contactFeedback.classList.remove('hidden');
+          return;
+        }
+
+        contactFeedback.textContent = 'Dziękujemy za wiadomość! Odezwiemy się wkrótce.';
+        contactFeedback.classList.remove('text-red-600');
+        contactFeedback.classList.add('text-green-600');
+        contactFeedback.classList.remove('hidden');
+        contactForm.reset();
+      });
+    }
+
+    new Swiper('.mySwiper', {
+      pagination: { el: '.swiper-pagination' },
+      autoplay: { delay: 4000 },
+      loop: true,
+      grabCursor: true,
+    });
   </script>
 </body>
 </html>
