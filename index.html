@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Biuro Prawne Katarzyny Żuk oferuje wsparcie prawne dla klientów biznesowych oraz osób fizycznych." />
+  <title>Biuro Prawne &mdash; Katarzyna Żuk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    .heading-font { font-family: 'Montserrat', sans-serif; }
+    .parallax-hero {
+      background-image: url('/images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-900 bg-white">
+  <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur border-b border-gray-200 z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#hero" class="heading-font text-xl font-semibold tracking-wide text-gray-900">Biuro Prawne</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-700 uppercase tracking-wide">
+        <a href="#hero" class="hover:text-gray-900 transition">Start</a>
+        <a href="#about" class="hover:text-gray-900 transition">O nas</a>
+        <a href="#values" class="hover:text-gray-900 transition">Zasady</a>
+        <a href="#offer" class="hover:text-gray-900 transition">Oferta</a>
+        <a href="#footer" class="hover:text-gray-900 transition">Kontakt</a>
+      </nav>
+      <button
+        type="button"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-300 text-gray-700"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        id="menu-toggle"
+      >
+        <span class="sr-only">Otwórz menu</span>
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden hidden border-t border-gray-200 bg-white" id="mobile-menu">
+      <nav class="flex flex-col px-6 py-4 space-y-3 text-sm font-semibold text-gray-700 uppercase tracking-wide">
+        <a href="#hero" class="hover:text-gray-900 transition">Start</a>
+        <a href="#about" class="hover:text-gray-900 transition">O nas</a>
+        <a href="#values" class="hover:text-gray-900 transition">Zasady</a>
+        <a href="#offer" class="hover:text-gray-900 transition">Oferta</a>
+        <a href="#footer" class="hover:text-gray-900 transition">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24 md:pt-28">
+    <section id="hero" class="parallax-hero relative">
+      <div class="absolute inset-0 bg-gray-900/60"></div>
+      <div class="relative max-w-4xl mx-auto px-6 py-32 sm:py-40 text-white">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-200">Katarzyna Żuk</p>
+        <h1 class="heading-font text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mt-4">
+          Usługi dla klientów biznesowych<br />
+          i dla osób fizycznych
+        </h1>
+        <p class="mt-6 text-lg max-w-2xl text-gray-100">
+          W sprawach naszych Klientów pragniemy być przewodnikiem, prowadzimy komunikację w taki sposób, aby była ona dla każdego Klienta zrozumiała.
+        </p>
+        <div class="mt-10">
+          <a href="#about" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gray-900 shadow-lg shadow-gray-900/20 transition hover:bg-gray-100">
+            Zobacz więcej
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 sm:py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">O nas</p>
+          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900">Biuro Prawne</h2>
+          <h3 class="heading-font text-xl font-semibold mt-2 text-gray-600">Katarzyna Żuk</h3>
+          <p class="mt-6 text-lg leading-relaxed text-gray-700">
+            Biuro Prawne reprezentowane przez Katarzynę Żuk świadczy usługi zarówno dla klientów biznesowych, jak i dla osób fizycznych. Porad prawnych udzielamy stacjonarnie w naszym Biurze Prawnym, bezpośrednio u Klienta, a także w postaci e-porad, dzięki czemu jesteśmy otwarci na różne formy współpracy, także zdalnej.
+          </p>
+          <div class="mt-10">
+            <a href="#offer" class="inline-flex items-center justify-center rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold uppercase tracking-widest text-white shadow-md shadow-gray-900/20 transition hover:bg-gray-800">
+              Zobacz więcej
+            </a>
+          </div>
+        </div>
+        <div class="relative overflow-hidden rounded-3xl shadow-xl shadow-gray-900/10">
+          <img src="/images/about.jpg" alt="Biuro Prawne Katarzyny Żuk" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 border-4 border-white/60 rounded-3xl pointer-events-none"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="values" class="py-20 sm:py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Nasze wartości</p>
+          <h2 class="heading-font text-3xl font-bold mt-4 text-gray-900">Podstawowe zasady</h2>
+          <p class="mt-6 text-lg text-gray-700">jakimi kierujemy się w swojej codziennej pracy to:</p>
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+            <h3 class="heading-font text-xl font-semibold text-gray-900">Indywidualizm</h3>
+            <p class="mt-4 text-sm text-gray-600">Każdy przypadek analizujemy oddzielnie, aby dopasować rozwiązania do potrzeb klienta.</p>
+          </article>
+          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+            <h3 class="heading-font text-xl font-semibold text-gray-900">Współpraca</h3>
+            <p class="mt-4 text-sm text-gray-600">Budujemy relacje oparte na zaufaniu i stałym dialogu na każdym etapie obsługi.</p>
+          </article>
+          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+            <h3 class="heading-font text-xl font-semibold text-gray-900">Komunikacja</h3>
+            <p class="mt-4 text-sm text-gray-600">Zapewniamy jasne i przejrzyste informacje, aby decyzje prawne były w pełni świadome.</p>
+          </article>
+          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+            <h3 class="heading-font text-xl font-semibold text-gray-900">Profesjonalizm</h3>
+            <p class="mt-4 text-sm text-gray-600">Działamy z najwyższą starannością, korzystając z aktualnej wiedzy prawnej.</p>
+          </article>
+          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+            <h3 class="heading-font text-xl font-semibold text-gray-900">Zaangażowanie</h3>
+            <p class="mt-4 text-sm text-gray-600">Pozostajemy dostępni i aktywni w poszukiwaniu optymalnych rozwiązań.</p>
+          </article>
+          <article class="rounded-2xl bg-gray-50 p-8 shadow-sm shadow-gray-900/5 border border-gray-100">
+            <h3 class="heading-font text-xl font-semibold text-gray-900">Bezpieczeństwo</h3>
+            <p class="mt-4 text-sm text-gray-600">Dbamy o poufność danych oraz o pełną zgodność działań z obowiązującymi przepisami.</p>
+          </article>
+        </div>
+        <div class="mt-12">
+          <a href="#offer" class="inline-flex items-center justify-center rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold uppercase tracking-widest text-white shadow-md shadow-gray-900/20 transition hover:bg-gray-800">
+            Zobacz więcej
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer" class="py-20 sm:py-24 bg-gray-900 text-gray-100">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-400">Oferta</p>
+        <h2 class="heading-font text-3xl font-bold mt-4">Zapewniamy pomoc prawną w sprawach z zakresu różnych dziedzin prawa:</h2>
+        <p class="mt-6 text-lg text-gray-300">prawa cywilnego, prawa pracy, prawa handlowego, gospodarczego i innych</p>
+        <div class="mt-10">
+          <a href="#footer" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gray-900 shadow-lg shadow-gray-950/20 transition hover:bg-gray-100">
+            Zobacz więcej
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="bg-gray-950 text-gray-300">
+    <div class="max-w-6xl mx-auto px-6 py-16 grid gap-12 lg:grid-cols-[2fr,1fr]">
+      <div>
+        <a href="#hero" class="heading-font text-2xl font-semibold text-white">Biuro Prawne &mdash; Katarzyna Żuk</a>
+        <p class="mt-6 max-w-2xl text-sm leading-relaxed text-gray-400">
+          Biuro Prawne reprezentowane przez Katarzynę Żuk świadczy usługi zarówno dla klientów biznesowych, jak i dla osób fizycznych. Porad prawnych udzielamy stacjonarnie w naszym Biurze Prawnym, bezpośrednio u Klienta, a także w postaci e-porad, dzięki czemu jesteśmy otwarci na różne formy współpracy, także zdalnej.
+        </p>
+      </div>
+      <div class="space-y-4 text-sm uppercase tracking-widest text-gray-400">
+        <p class="heading-font text-base font-semibold text-white uppercase tracking-widest">Nawigacja</p>
+        <ul class="space-y-3">
+          <li><a href="#hero" class="hover:text-white transition">Start</a></li>
+          <li><a href="#about" class="hover:text-white transition">O nas</a></li>
+          <li><a href="#values" class="hover:text-white transition">Zasady</a></li>
+          <li><a href="#offer" class="hover:text-white transition">Oferta</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800">
+      <div class="max-w-6xl mx-auto px-6 py-6 text-xs uppercase tracking-[0.3em] text-gray-500">
+        Copyright &copy; 2025 Katarzyna Żuk - Biuro Prawne
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('hidden');
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+  </script>
+</body>
+</html>
